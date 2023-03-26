@@ -6,6 +6,16 @@ import {defineComponent} from "vue";
 export default defineComponent({
   name: 'App',
   components: {Inner},
+  computed: {
+    workaround: {
+      get(): YearMonth {
+        return this.month as YearMonth
+      },
+      set(value: YearMonth) {
+        this.month = value
+      }
+    }
+  },
   data() {
     return {
       month: YearMonth.now()
@@ -17,7 +27,7 @@ const param = YearMonth.now()
 </script>
 
 <template>
-  <Inner :month="month"></Inner>
+  <Inner :month="workaround"></Inner>
 </template>
 
 <style scoped>
