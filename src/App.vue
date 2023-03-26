@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import Inner from '@/components/Inner.vue'
 import {YearMonth} from "@js-joda/core";
+import type {Ref} from "vue";
 import {ref} from "vue";
 
-const month = ref<YearMonth>(YearMonth.now())
+const month = ref(YearMonth.now()) as Ref<YearMonth>
 
 </script>
 
