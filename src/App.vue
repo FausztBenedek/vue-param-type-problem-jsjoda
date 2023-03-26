@@ -1,19 +1,10 @@
-<script lang="ts">
+<script lang="ts" setup>
 import Inner from '@/components/Inner.vue'
 import {YearMonth} from "@js-joda/core";
-import {defineComponent} from "vue";
+import {ref} from "vue";
 
-export default defineComponent({
-  name: 'App',
-  components: {Inner},
-  data() {
-    return {
-      month: YearMonth.now()
-    }
-  }
-})
+const month = ref<YearMonth>(YearMonth.now())
 
-const param = YearMonth.now()
 </script>
 
 <template>
